@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+
+\input{preambulo/preamble}
+
+%para hacer referencia a ecuaciones utilizar \eqref
+%para hacer citas al píe de pagina y referencias utilizar \footcite{•}
+
+\begin{document}
+%------------------------------------------------------------------------------------------------------------------
+%-------------------------------PORTADA-------------------------------------------------------------------
+\input{secciones/Portada}
+
+
+%-----------------------------------------------------------------------------------------
+%----------------------------------ÍNDICE.-----------------------------------
+\newpage 
+\pagestyle{empty}
+\tableofcontents %%FALTA CORREGIR
+
+
+%-----------------------------------------------------------------------------------------
+%----------------------------------INTRODUCCIÓN.-----------------------------------
+\newpage
+\pagestyle{fancy}
+\setcounter{page}{2} %empezar numeración desde está pagina
+\setcounter{equation}{0} %empezar numeración desde 1 para ecuaciones
+\setcounter{figure}{0} %empezar numeración desde 1 para figuras
+\setcounter{table}{0} %empezar numeración desde 1 para tablas
+%----------------------------------------------------------------------------------------
+\section{INTRODUCCIÓN}
+
+\input{secciones/introduccion}
+
+
+%-----------------------------------------------------------------------------------------
+%----------------------------------DESARROLLO.-----------------------------------
+\newpage
+\setcounter{equation}{0} %empezar numeración desde 1 para ecuaciones
+\setcounter{figure}{0} %empezar numeración desde 1 para figuras
+\setcounter{table}{0} %empezar numeración desde 1 para tablas
+%----------------------------------------------------------------------------------------
+\section{DESARROLLO}
+
+\input{secciones/desarrollo}
+
+
+%------------------------------------------------------------------------------------------
+%---------------------SUGERENCIAS--------------------------
+\newpage
+\setcounter{equation}{0} %empezar numeración desde 1 para ecuaciones
+\setcounter{figure}{0} %empezar numeración desde 1 para figuras
+\setcounter{table}{0} %empezar numeración desde 1 para tablas
+%----------------------------------------------------------------------------------------
+\section{SUGERENCIAS}
+
+\input{secciones/sugerencias}
+
+
+%-------------------------------------------------------------------------------------------
+%-----------------------------CONCLUSIONES------------------------------------
+\newpage
+\setcounter{equation}{0} %empezar numeración desde 1 para ecuaciones
+\setcounter{figure}{0} %empezar numeración desde 1 para figuras
+\setcounter{table}{0} %empezar numeración desde 1 para tablas
+%----------------------------------------------------------------------------------------
+\section{CONCLUSIONES}
+
+\input{secciones/conclusiones}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%----------------------------REFERENCE LIST--------------------------------
+\newpage
+\setcounter{equation}{0} %empezar numeración desde 1 para ecuaciones
+\setcounter{figure}{0} %empezar numeración desde 1 para figuras
+\setcounter{table}{0} %empezar numeración desde 1 para tablas
+%----------------------------------------------------------------------------------------
+\section{BIBLIOGRAFÍA}
+\bibliography{bibliografia} 
+\bibliographystyle{apalike} 
+\
+
+%-------------------------------------------------------------------------------------------
+%-----------------------------ANEXOS-------------------------------------------
+\newpage
+\pagestyle{empty} %suprimir numeración 
+\setcounter{equation}{0} %empezar numeración desde 1 para ecuaciones, AGREGAR ESTO ANTES DE CADA SUBSECCIÓN PARA COMENZAR CUENTA DESDE 1
+\setcounter{figure}{0} %empezar numeración desde 1 para figuras
+\setcounter{table}{0} %empezar numeración desde 1 para tablas
+\renewcommand{\thesubsection}{APÉNDICE \Alph{subsection}:}                            %REENUMERACION DE SUBSECCIONES
+\renewcommand{\thesubsubsection}{\Alph{subsection}.\arabic{subsubsection}:}       %REENUMERACION DE SUBSUBSECCIONES
+\renewcommand{\theequation}{.\Alph{subsection}\arabic{equation}} %definición enumeración de ecuaciones
+\renewcommand{\thefigure}{\Alph{subsection}.\arabic{figure}} %definición enumeración de ecuaciones
+\renewcommand{\thetable}{\Alph{subsection}.\arabic{table}} %definición enumeración de tablas
+
+%----------------------------------------------------------------------------------------
+\section*{ANEXOS}
+
+\input{secciones/anexos}
+
+\end{document}
